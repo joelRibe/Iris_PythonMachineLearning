@@ -1,4 +1,4 @@
-Utilization of some basic algorithms for the recogniton of one of the Iris plants among the three existing (Setosa, Versicolor, Virginica) using Python .
+Utilization of some basic algorithms for the recogniton of one of the Iris plants among the three existing (Setosa, Versicolor, Virginica) using Python Language .
 
 Next , these are the algorithms that I used for the recognition of the plants :
 
