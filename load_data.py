@@ -25,3 +25,4 @@ for index in range(0,50):
         testSet.append(dataset[setosas[index]].tolist())
         testSet.append(dataset[versicolors[index]].tolist())
         testSet.append(dataset[virginicas[index]].tolist())
+
