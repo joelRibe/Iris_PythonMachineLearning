@@ -15,9 +15,13 @@ def centroides(trainingSet):
 
 
 #testing the 'centroides' function
-# trainingSet,testSet = load_data('iris.txt') 
+trainingSet,testSet = load_data('iris.txt') 
 # centroides = centroides(trainingSet)
 
 # print(centroides[0])
 # print(centroides[1])
 # print(centroides[2])
+
+# for index in range(len(trainingSet)):
+setosas = np.where(trainingSet == 'Setosa')[0].tolist()
+print(setosas)

@@ -2,7 +2,9 @@ import numpy as np
 
 def load_data(fileName):
 
-	dataset = np.genfromtxt(fileName,delimiter=' ', dtype='str')
+	 dataset = np.genfromtxt(fileName,delimiter=' ', dtype='str')
+
+	 # print(dataset)
 
 	setosas = np.where( dataset == 'Setosa')[0].tolist()
 	versicolors = np.where( dataset == 'Versicolor')[0].tolist()
@@ -30,7 +32,7 @@ def load_data(fileName):
 	return [trainingSet,testSet]
 
 
-
+# load = load_data('iris.txt')
 
 
 
