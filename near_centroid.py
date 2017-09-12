@@ -3,25 +3,18 @@ from distEuclidian import dist_euclidiana_np
 from vectorCentroid import vector_centroid
 from load_data import load_data # for Test
 
-def centroides(trainingSet):
+def centroides(trainingSetSetosas,trainingSetVersicolors,trainingSetVirginicas):
 	
-	# setosaCentroid = vector_centroid(np.where( trainingSet == 'Setosa')[:4] , len(trainingSet[0]))
+	setosaCentroid = vector_centroid(trainingSetSetosas)
 
-	# versicolorCentroid = vector_centroid(np.where( trainingSet == 'Versicolor')[:4], len(trainingSet[0]))
+	versicolorCentroid = vector_centroid(trainingSetVersicolors)
 
-	# virginicaCentroid = vector_centroid(np.where( trainingSet == 'Virginica')[:4], len(trainingSet[0]))
+	virginicaCentroid = vector_centroid(trainingSetVirginicas)
 
 	return [setosaCentroid,versicolorCentroid,virginicaCentroid]
 
 
-#testing the 'centroides' function
-trainingSet,testSet = load_data('iris.txt') 
-# centroides = centroides(trainingSet)
 
-# print(centroides[0])
-# print(centroides[1])
-# print(centroides[2])
 
-# for index in range(len(trainingSet)):
-setosas = np.where(trainingSet == 'Setosa')[0].tolist()
-print(setosas)
+
+# def near_centroid()

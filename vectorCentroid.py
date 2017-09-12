@@ -1,7 +1,7 @@
 import numpy as np 
 
-def vector_centroid(listVectors,index):
-	centroid = [0] * index
+def vector_centroid(listVectors):
+	centroid = [0] * len(listVectors[0])
 	centroid = np.array(centroid)
 
 	for listv in range(len(listVectors)):
@@ -10,7 +10,7 @@ def vector_centroid(listVectors,index):
 		centroid = centroid + vector
 
 
-	centroid = (centroid/index)
+	centroid = (centroid/len(listVectors))
 	return centroid
 
 
@@ -18,5 +18,6 @@ def vector_centroid(listVectors,index):
 # listVectors = []
 # listVectors.append(['2','4'])
 # listVectors.append(['4','8'])
+# listVectors.append(['2','8'])
 
-# print(vector_centroid(listVectors,len(listVectors)))
+# print(vector_centroid(listVectors))
