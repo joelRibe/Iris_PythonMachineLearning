@@ -11,7 +11,7 @@ def vector_centroid(listVectors):
 
 
 	centroid = (centroid/len(listVectors))
-	return centroid
+	return centroid.tolist()
 
 
 #Testing the vector_centroid function

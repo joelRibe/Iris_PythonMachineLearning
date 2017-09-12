@@ -1,9 +1,10 @@
 from load_data import load_data
 from near_neighborhood import near_neighborhood
-
+from near_centroid import calc_centroides
+from near_centroid import near_centroid
 
 trainingSet,testSet = load_data('iris.txt') 
-results=near_neighborhood(trainingSet,testSet)
+results=near_centroid(trainingSet,testSet)
 
 def print_results_of_near_neighborhood(results,testSet):
 	hits=0
