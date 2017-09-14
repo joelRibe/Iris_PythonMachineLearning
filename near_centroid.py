@@ -1,36 +1,36 @@
 import numpy as np
 from distEuclidian import dist_euclidiana_np
 from vectorCentroid import vector_centroid
-from load_data import load_data # for Test
+from load_data import load_data  # for Test
+
 
 def calc_centroides(trainingSet):
-	trainingSet = np.array(trainingSet)
-	trainingSet = trainingSet[:,:4].tolist()
+    trainingSet = np.array(trainingSet)
+    trainingSet = trainingSet[:, :4].tolist()
 
-	setosaCentroid = [vector_centroid(trainingSet[:40]),'Setosa']
+    setosaCentroid = [vector_centroid(trainingSet[:40]), 'Setosa']
 
-	versicolorCentroid = [vector_centroid(trainingSet[40:80]),'Versicolor']
+    versicolorCentroid = [vector_centroid(trainingSet[40:80]), 'Versicolor']
 
-	virginicaCentroid = [vector_centroid(trainingSet[80:120]),'Virginica']
+    virginicaCentroid = [vector_centroid(trainingSet[80:120]), 'Virginica']
 
-	return [setosaCentroid,versicolorCentroid,virginicaCentroid]
+    return [setosaCentroid, versicolorCentroid, virginicaCentroid]
 
 
+def near_centroid(trainingSet, testSet):
+    resultsList = []
 
-def near_centroid(trainingSet,testSet):
-	resultsList = []
+    centroides = calc_centroides(trainingSet)
 
-	centroides = calc_centroides(trainingSet)
+    for test in testSet:
+        dist = dist_euclidiana_np(test, centroides[0][0], 4)
+        label = 'Setosa'
+        for centros in centroides:
+            dist1 = dist_euclidiana_np(test, centros[0], 4)
+            if(dist > dist1):
+                label = centros[1]
+                dist = dist1
 
-	for test in testSet:
-		dist = dist_euclidiana_np(test,centroides[0],4)
-		label='Setosa'
-		for centros in centroides:
-			dist1 = dist_euclidiana_np(test,centros,4)
-			if(dist> dist1):
-				label= centros[1]
-				dist = dist1
+        resultsList.append(label)
 
-		resultsList.append(label)
-
-	return resultsList
+    return resultsList
