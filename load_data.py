@@ -18,20 +18,18 @@ def load_data(fileName):
 	trainingSet = []
 	testSet = []
 
-	for index in range(0,50):
-		if index <= 39:
-			trainingSet.append(dataset[setosas[index]].tolist())
-			trainingSet.append(dataset[versicolors[index]].tolist())
-			trainingSet.append(dataset[virginicas[index]].tolist())
-		else:
-			testSet.append(dataset[setosas[index]].tolist())
-			testSet.append(dataset[versicolors[index]].tolist())
-			testSet.append(dataset[virginicas[index]].tolist())
+	for sets in [setosas,versicolors,virginicas]:
+		for index in range(0,50):
+			if index <= 39:
+				trainingSet.append(dataset[sets[index]].tolist())
+			else:
+				testSet.append(dataset[sets[index]].tolist())
 	return [trainingSet,testSet]
 
 
 
-
+# [load1,load2] = load_data('iris.txt')
+# print(load1[40:80])
 
 
 
