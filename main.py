@@ -7,7 +7,8 @@ results1 = near_neighborhood(trainingSet, testSet)
 results2 = near_centroid(trainingSet, testSet)
 
 
-def print_results_of_near_neighborhood(results, testSet):
+def print_results_of_near_neighborhood_or_centroid(results, testSet, algorithm):
+    print('Type of Algorithm : {}' .format(algorithm))
     hits = 0
     for index in range(len(testSet)):
         print(
@@ -20,7 +21,9 @@ def print_results_of_near_neighborhood(results, testSet):
 
 
 print("Accuracy: {} %" .format(
-    print_results_of_near_neighborhood(results1, testSet)))
+    print_results_of_near_neighborhood_or_centroid(results1, testSet, 'Near-Neighborhood')))
+
+print('')
 
 print("Accuracy: {} %" .format(
-    print_results_of_near_neighborhood(results2, testSet)))
+    print_results_of_near_neighborhood_or_centroid(results2, testSet, 'Near-Centroid')))
