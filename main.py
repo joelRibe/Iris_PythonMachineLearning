@@ -1,10 +1,18 @@
 from load_data import *
 from near_neighborhood import *
 from near_centroid import *
+from normalization_data import *
 
+# whitout normalization data
+# trainingSet, testSet = load_data('iris.txt')
+# results1 = near_neighborhood(trainingSet, testSet)
+# results2 = near_centroid(trainingSet, testSet)
+
+# with normalization data
 trainingSet, testSet = load_data('iris.txt')
-results1 = near_neighborhood(trainingSet, testSet)
-results2 = near_centroid(trainingSet, testSet)
+trainingSet_norm, testSet_norm = data_normalization(trainingSet, testSet)
+results1 = near_neighborhood(trainingSet_norm, testSet_norm)
+results2 = near_centroid(trainingSet_norm, testSet_norm)
 
 
 def print_results_of_near_neighborhood_or_centroid(results, testSet, algorithm):
